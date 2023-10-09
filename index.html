@@ -1,0 +1,35 @@
+<html>
+	<title>Click Automation</title>
+	<style>
+		body {
+			text-align: center;
+			font-size: 25px;
+			font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+		}
+		#clickMe {
+			font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+			font-size: 25px;
+			font-weight: bold;
+			border-radius: 15px;
+			background-color: grey;
+			padding: 50px;
+			width: 300px;
+			margin-top: 50px;
+			outline: 0;
+		}
+	</style>
+</head>
+<body onload="clicked()">
+	<h1>Click Automation</h1>
+	<button id="clickMe" onclick="clicked()">Enroll KG</button>
+	<p id="clickCount">You have clicked: 9 times</p>
+    <a style="display:none" id="umc" href="smdm://umc.html?program=BULK_ENROLL&amp;service_type=KG" target="_self"></a>
+	<script>
+		let clickCount = 1;
+		function clicked() {
+			document.getElementById("clickCount").innerHTML = "You have clicked: " + clickCount++ + " times";
+            document.getElementById("umc").click();
+		};
+	</script>
+
+</body></html>
